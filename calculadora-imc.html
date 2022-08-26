@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Document</title>
+</head>
+<body>
+   
+    <header>
+        <img src="senai-azul_252256_img.png" alt="" srcset="">
+        <h2>Técnico em Desenvolvimento de Sistemas</h2>
+    </header>
+
+    <section class="container">
+        <h1>Calculadora de IMC</h1>
+        <form action="">
+            <label for="peso">peso</label>
+            <input type="text"name="peso" id="peso">
+            <label for="altura">Altura</label>
+            <input type="text"name="altura" id="altura">
+            <button type="submit">Enviar</button>
+        </form>
+
+    </section>
+    <script>
+        const formulario = document.getElementById("formulario");
+
+        formulario.addEventListener('submit',function(e){
+            e.preventDefault();
+            const inputPeso = e.target.querySelector("#Peso");
+            const inputAltura = e.target.querySelector("#Altura");
+
+            const Peso = Number(inputPeso.value);
+            const Altura = Number(inputAltura.value);
+
+            const enviar = multiplicar(Peso ,Altura);
+
+            const paragrafo = document.createElement("p");
+            document.getElementById("enviar").appendChild(paragrafo).innerHTML = enviar;
+        })
+
+        function multiplicar(a,b){
+            let resultado = (a/(b**2));
+            return resultado;
+        }
+    </script>
+    
+</body>
+</html>
